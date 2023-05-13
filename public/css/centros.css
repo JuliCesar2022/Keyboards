@@ -1,0 +1,48 @@
+.fixed-top{
+position: relative;
+}
+
+
+.locates li{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+.contentlocate{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+
+}
+.locates li div{
+    width: 200px;
+    color: #6b6b6b;
+}
+
+
+
+
+.locates{
+    background: rgba(238, 238, 238, 0.51);
+    border-radius: 20px;
+    margin-top: 10px;
+    width: 1000px;
+}
+
+.nombres{
+    width: 1000px;
+}
+
+.nombres li div{
+    width: 200px;
+    color: black;
+}
+.nombres li{
+    display: flex;
+    justify-content: space-between;
+}
+
+.locates li div a{
+    color: #F63854;
+}

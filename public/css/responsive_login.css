@@ -1,0 +1,34 @@
+.containlogin{
+  
+}
+
+@media (min-width: 1500px) {
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     
+    }
+    .containlogin{
+        background-position-x: left ;
+    }
+  }
+  @media (max-width: 280px) {
+    .containlogin{
+        min-width: 258px;
+        
+    }
+    .login{
+       min-width: 258px;
+    }
+  }
+  @media (max-height: 510px) {
+    .containlogin{
+        min-height: 500px;
+    }
+    .login{
+       min-height: 500px;
+    }
+  }
+
+  

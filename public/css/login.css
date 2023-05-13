@@ -1,0 +1,206 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Source+Sans+3&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.logo{
+
+    width: 100px;
+}
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 9999999;
+}
+
+.loader {
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+#loader-1:before, #loader-1:after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    border: 7px solid transparent;
+    border-top-color: #F63854;
+}
+
+#loader-1:before {
+    z-index: 100;
+    animation: spin 1s infinite;
+}
+
+#loader-1:after {
+    border: 7px solid #f2f2f2;
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.section-padding {
+    padding: 60px 0;
+}
+
+hr {
+    border-top: 1px dotted #ddd;
+}
+
+
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+    height: 500px;
+}
+.foter{
+    flex: 1;
+    display: flex;
+    align-items: end;
+    width: 100%
+}
+
+.form input{
+    height: 40px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    background: #ECECEC;
+}
+
+input{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.google{
+    background: #ECECEC;
+    border-radius: 30px;
+}
+
+.containlogin{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+    background: url(/img/hero-area.svg) no-repeat;
+    background-position: bottom;
+    background-size: cover;
+
+}
+.inicio{
+    margin-bottom: 10px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 2em;
+
+}
+.correo label{
+    color:#8F8E8E ;
+}
+
+.correo{
+    display: flex;
+    justify-content: end;
+    /* align-items: end; */
+    flex-direction: column;
+
+}
+
+.correo input{
+    width: 100%;
+    height: 40px;
+
+}
+
+
+.password{
+    color: #8F8E8E;
+}
+.btn{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.form *{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+}
+.form button{
+    width: 140px;
+    background: #FF0065;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-bottom: 10px;
+}
+.google{
+    height: 35px;
+    margin-top: 10px;
+}
+.google a{
+    text-decoration: none;
+}
+
+
+
+
+.icon{
+    width: 30px;
+    height: 20px;
+    background: url(/img/google.png) no-repeat;
+    background-size: contain;
+    background-position: bottom;
+}
+.google{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.form-check{
+    flex-direction: row;
+}
+
+.form-check-label{
+    margin-top: 10px;
+    margin-left: 10px;
+}

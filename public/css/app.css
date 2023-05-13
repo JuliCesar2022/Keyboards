@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --anchocerrar:0px;
+    --otroancho:300px;
+    --formularioalto:calc(100% - 118px);
+}
+
+
+body{
+
+}
+html{
+    overflow-x: scroll;
+}
+
+.bg-inverse {
+    box-shadow: 0px 3px 6px 3px rgba(0, 0, 0, 0.06);
+}
+
+.header{
+    width: 100%;
+    max-width: 1800px;
+}
+.header img{
+    width: 120px;
+
+}
+
+.row{
+    justify-content: start;
+}
+
+
+.aplication{
+
+height: 100vh;
+
+}
+
+.servicehistorial{
+    background: #EEEEEE;
+    height: 100%;
+    width: 300px;
+    border-radius: 30px 0 0 30px;
+    padding: 10px;
+}
+
+.servicehistorial p{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.servicehistorial p:after{
+    content: "";
+
+    height: 2px;
+    background: red;
+    animation: animationhistorial 1s forwards;
+}
+
+@keyframes animationhistorial {
+    0%{
+        width: 0px;
+    }
+    100%{
+        width: 50px;
+    }
+}
+
+.formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.fixed-top{
+    position: relative;
+}
+
+
+
+.form-control{
+    border: 1px solid #f1f1f1;
+}
+.listahistorial{
+    width: 100%;
+}
+
+@keyframes rotate {
+    0%{
+
+    }
+    100%{
+        rotate: 180deg;
+    }
+}
+
+@keyframes animacioncerrarreverse {
+    0%{
+        width: var(--anchocerrar);
+    }
+    100%{
+        width: 300px;
+    }
+}
+@keyframes animacioncerrar {
+
+    0%{
+        width: var(--otroancho);
+    }
+    100%{
+        width: 30px;
+    }
+
+}
+
+.contains-historial{
+    height: calc(100% - 118px);
+    min-height: 750px;
+}
+@media  (max-height:571px){
+    strong{
+        margin-top: 20px;
+    }
+    .formulario{
+        justify-content: center;
+        align-items: start;
+    }
+}@media  (max-width:750px){
+    strong{
+        margin-top: 20px;
+    }
+    .formulario{
+        justify-content: center;
+        align-items: start;
+    }
+}
+
+
+.formulario{
+
+}
+form{
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.mi-icono-clase{
+    color: red;
+}
+
