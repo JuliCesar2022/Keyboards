@@ -27,22 +27,49 @@ position: relative;
     background: rgba(238, 238, 238, 0.51);
     border-radius: 20px;
     margin-top: 10px;
-    width: 1000px;
+    max-width: 1000px;
+    width: 100%;
+
 }
 
+
 .nombres{
-    width: 1000px;
+    max-width: 1000px;
+    width: 100%;
 }
 
 .nombres li div{
     width: 200px;
     color: black;
+    padding: 10px;
+
 }
 .nombres li{
     display: flex;
     justify-content: space-between;
+    margin: 10px;
 }
 
 .locates li div a{
     color: #F63854;
 }
+
+
+@media (max-width: 460px) {
+    .locates li div{
+
+        color: black;
+        margin: 10px;
+        font-size: .8rem;
+        display: flex;
+        justify-content: center;
+    }
+    .locates{
+        max-width: 460px;
+    }
+    .nombres{
+        max-width: 460px;
+        font-size: .7rem;
+    }
+}
+

@@ -55,7 +55,7 @@
 }
 
 
- @media (max-width: 600px) {
+ @media (max-width: 500px) {
      .tecnico{
 
         display: none;
@@ -86,3 +86,6 @@
 
 }
 
+.menu a{
+    padding-bottom: 2px;
+}

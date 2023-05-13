@@ -4,6 +4,7 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 use \Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -22,6 +23,56 @@ class DatabaseSeeder extends Seeder
         $this->call('Cms_settingsSeeder');
         $this->call('CmsEmailTemplates');
         $this->call('Modulos');
+
+
+        \App\Models\centrodereparaciones::insert([
+            [
+             "centro_reparaciones"=>"Keyboards cartagena",
+             "pais"=>"colombia",
+             "ciudad"=>"cartagena",
+             "direccion"=>"Distrito Turístico Y Cultural, Tv. 54 #41-117, Cartagena de Indias, Provincia de Cartagena, Bolívar",
+             "telefono"=>"573225951276",
+             "horario_comercial"=>"12:00pm - 06:00pm",
+                "busqueda"=>"Distrito Turístico Y Cultural, Tv. 54 #41-117, Cartagena de Indias, Provincia de Cartagena, Bolívar"
+
+            ],[
+                "centro_reparaciones"=>"Keyboards sao-paulo",
+                "pais"=>"brasil",
+                "ciudad"=>"sao paulo",
+                "direccion"=>"Av. Aricanduva, 5555 - Aricanduva, São Paulo - SP, 03527-900, Brasil",
+                "telefono"=>"3022285286",
+                "horario_comercial"=>"12:00pm - 06:00pm",
+                "busqueda"=>"Av. Aricanduva, 5555 - Aricanduva, São Paulo - SP, 03527-900, Brasil"
+
+            ],[
+                "centro_reparaciones"=>"Keyboards barranquilla",
+                "pais"=>"colombia",
+                "ciudad"=>"barranquilla",
+                "direccion"=>"Centro Comercial Miramar, Cra. 43 #99-50, Nte. Centro Historico, Barranquilla",
+                "telefono"=>"573026736193",
+                "horario_comercial"=>"12:00pm - 06:00pm",
+                "busqueda"=>"Centro Comercial Miramar, Cra. 43 #99-50, Nte. Centro Historico, Barranquilla"
+
+            ],[
+                "centro_reparaciones"=>"Keyboards bogota",
+                "pais"=>"colombia",
+                "ciudad"=>"bogota",
+                "direccion"=>"Costado Occidental, Autopista Nte. #45 - 03, Suba, Bogotá",
+                "telefono"=>"573026736193",
+                "horario_comercial"=>"12:00pm - 06:00pm",
+                "busqueda"=>"Costado Occidental, Autopista Nte. #45 - 03, Suba, Bogotá"
+
+            ],[
+                "centro_reparaciones"=>"Keyboards rio de janeiro",
+                "pais"=>"brasil",
+                "ciudad"=>"rio de janeiro",
+                "direccion"=>"Av. Nossa Sra. de Copacabana, 581 - Copacabana, Rio de Janeiro - RJ, 22050-002, Brasil",
+                "telefono"=>"3022285286",
+                "horario_comercial"=>"12:00pm - 06:00pm",
+                "busqueda"=>"Centro Comercial Miramar, Cra. 43 #99-50, Nte. Centro Historico, Barranquilla"
+
+            ]
+        ]);
 //        $this->command->info('end factorys!');
     }
 }

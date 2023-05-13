@@ -19,11 +19,11 @@
 
                 <li>
 
-                    <div>{{$centros_reparacion->centro_reparaciones}}</div>
-                    <div> <a href="tel:@if($centros_reparacion->pais=='colombia')+57 @endif @if($centros_reparacion->pais=='brasil') +55 @endif{{$centros_reparacion->telefono}}">
-                            {{$centros_reparacion->telefono}}
+                    <div >{{$centros_reparacion->centro_reparaciones}}</div>
+                    <div style=""> <a href="tel:@if($centros_reparacion->pais=='colombia')+57 @endif @if($centros_reparacion->pais=='brasil') +55 @endif{{$centros_reparacion->telefono}}">
+                            <ion-icon style="font-size: 1.1rem" name="call-outline"></ion-icon>
                         </a></div>
-                    <div style="width: 300px"><a style="color:#6B6B6B" href="{{$centros_reparacion->busquedas}}">{{$centros_reparacion->direccion}}</a> </div>
+                    <div style="width: 300px;display: flex"><a style="" href="{{$centros_reparacion->busquedas}}"><ion-icon style="font-size: 1.1rem" name="location-outline"></ion-icon></a> </div>
                     <div>{{$centros_reparacion->horario_comercial}}</div>
                 </li>
                     <hr color="black">

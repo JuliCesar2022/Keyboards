@@ -74,7 +74,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">
-                            Asesoramiento
+                            Nosotros
                         </a>
                     </li>
                     <li class="nav-item" id="nav-item">

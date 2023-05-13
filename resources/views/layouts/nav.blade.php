@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="@yield('stylo')">
 
 
-    <title>Document</title>
+    <title>Keyboards</title>
 </head>
 <body>
 
