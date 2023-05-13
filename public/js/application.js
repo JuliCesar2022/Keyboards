@@ -66,7 +66,7 @@ function cerrar(){
     console.log("cerrar")
 }
 
-let abrirhistorial=false;
+let abrirhistorial=true;
 function cerrarhistorial(){
 
     if(abrirhistorial){
@@ -127,7 +127,7 @@ window.addEventListener('resize', function() {
 var ancho = window.innerWidth;
 if(ancho<700){
     abrirhistorial=true;
-    console.log('El ancho de la ventana es: ' + ancho);
+
 
     cerrarhistorial();
 }
