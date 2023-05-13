@@ -54,7 +54,7 @@
     <script >
         Swal.fire({
                 title: 'Enviado!',
-                text: 'Te estaremos contactando a tu numero:',
+                text: 'Te estaremos contactando a tu numero: {{\App\Models\User::where("id",auth()->id())->pluck('telefono')[0]}}',
                 icon: 'success',
 
         }
@@ -66,7 +66,7 @@
 <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <a href="" class="navbar-brand"><img src="img/logo.png" alt=""></a>
+        <a href="{{route('keyboard')}}" class="navbar-brand"><img src="img/logo.png" alt=""></a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <i class="lni-menu"></i>
@@ -75,7 +75,7 @@
             <ul class="navbar-nav mr-auto w-100 justify-content-end clearfix">
                 <li class="nav-item active">
                     <a class="nav-link" href="{{route('app')}}">
-                        Inicio
+                        Realizar solicitud
                     </a>
                 </li>
                 <li class="nav-item">

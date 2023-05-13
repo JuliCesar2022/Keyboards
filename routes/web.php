@@ -100,7 +100,7 @@ if($boleano=='false'){
     if ($diferenciaEnHoras<24 && $fecha!=null) {
 
 
-       //return redirect('app')->with('limite','Solo una solicitud por dia');
+       return redirect('app')->with('limite','Solo una solicitud por dia');
 
 
     }

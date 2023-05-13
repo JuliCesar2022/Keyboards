@@ -90,7 +90,7 @@
 
 
 
-                $this->form[] = ['label'=>'Status','name'=>'status','type'=>'select2','validation'=>'min:1|max:255','width'=>'col-sm-10',"dataenum"=>'recivido;en proceso;finalizado;cancelado'];
+                $this->form[] = ['label'=>'Status','name'=>'status','type'=>'select2','validation'=>'min:1|max:255','width'=>'col-sm-10',"dataenum"=>'recibido;en proceso;finalizado;cancelado'];
 			    $this->form[] = ['label'=>'Fecha salida','name'=>'fecha_salida','type'=>'datetime','validation'=>'date','width'=>'col-sm-10'];
                 $this->form[] = ['label'=>'Descripcion','name'=>'descripcion','type'=>'textarea','validation'=>'string|min:5|max:5000','width'=>'col-sm-10'];
 

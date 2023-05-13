@@ -146,12 +146,10 @@ if(ruta == "/app"){
     let params = new URLSearchParams(urlActual);
     let equipo = params.get("equipo");
 
-    console.log(ruta);
-    console.log(urlActual);
-    console.log("sieeeeeeeeeeeeeeeeeeeeeeeeeee")
-    console.log(equipo)
+
 
     if(equipo){
+        document.getElementById("new").value="false";
         const miDiv = document.getElementById('opcion-nuevo');
         const miDiv1 = document.getElementById('opcion-nuevo1');
         const miDiv2 = document.getElementById('opcion-nuevo2');
@@ -172,6 +170,7 @@ if(ruta == "/app"){
 
         var equipo_id=document.getElementById('equipo_id');
         equipo_id.value = equipo;
+
         document.getElementsByClassName('new')[0].style.display='none'
 
         document.getElementById('opcion-nuevo').style.display='none'
@@ -191,7 +190,7 @@ function mostraropc(){
     if(selector!=''){
 
         if (selector== 'true'){
-            console.log('nuevo')
+            document.getElementById('new').required=false;
             const miDiv = document.getElementById('opcion_existente');
             const elementos = miDiv.querySelectorAll('input, textarea, select');
 
@@ -225,7 +224,7 @@ function mostraropc(){
         }
 
         if (selector=='false'){
-            console.log('existente')
+
             const miDiv = document.getElementById('opcion-nuevo');
             const miDiv1 = document.getElementById('opcion-nuevo1');
             const miDiv2 = document.getElementById('opcion-nuevo2');

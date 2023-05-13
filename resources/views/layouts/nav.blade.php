@@ -45,7 +45,7 @@
             <ul class="navbar-nav mr-auto w-100 justify-content-end clearfix">
                 <li class="nav-item  ">
                     <a class="nav-link" href="{{route('app')}}">
-                        Inicio
+                        Realizar solicitud
                     </a>
                 </li>
                 <li class="nav-item {{setActive('centro')}}">
