@@ -7,6 +7,9 @@
 
     <div class="contienetodo">
 
+
+        <h1 style="margin: 20px">Servicios</h1>
+
         <div class="servicios">
             <div class="menu">
                 <a href="#"  class="nav-link contenido1" onclick="mostrarContenido('contenido1')"> activos</a>
@@ -24,10 +27,30 @@
                         <div>Modelo</div>
                         <div>Estado</div>
                         <div class="tecnico">Contacta a tu tecnico</div>
-                        <div>Detalles</div>
+{{--                        <div>Detalles</div>--}}
                     </li>
                     <hr>
+
+                    <?php
+
+                        $estados = $servicios->pluck('estado_servicio');
+                        $activos = substr_count($estados,"recivido") + substr_count($estados,"en proceso");
+                        $finalizados = substr_count($estados,"finalizado");
+                        $cancelados = substr_count($estados,"cancelado");
+
+
+
+                    ?>
+
+                    @if($activos == 0)
+
+                        <p>No tienes servicios activos.</p>
+
+                    @endif
+
                     @foreach($servicios as $servicio)
+
+
 
                         @if($servicio->estado_servicio!="finalizado" && $servicio->estado_servicio!="cancelado" )
 
@@ -78,7 +101,7 @@
                                         <a href=""><ion-icon name="information-circle-outline"></ion-icon></a>
                                     </div>
 
-                                    <div><ion-icon style="font-size: 1.5rem" name="ellipsis-horizontal-outline"></ion-icon></div>
+{{--                                    <div><ion-icon style="font-size: 1.5rem" name="ellipsis-horizontal-outline"></ion-icon></div>--}}
                                 </li>
                                 <hr>
 
@@ -98,10 +121,17 @@
                         <div>Modelo</div>
                         <div>Estado</div>
                         <div class="tecnico">Contacta a tu tecnico</div>
-                        <div>Mas</div>
+{{--                        <div>Mas</div>--}}
 
                     </li>
                     <hr>
+
+
+                    @if($finalizados == 0)
+
+                        <p>No tienes servicios finalizados.</p>
+
+                    @endif
 
                     @foreach($servicios as $servicio)
 
@@ -154,7 +184,7 @@
                                     <a href=""><ion-icon name="information-circle-outline"></ion-icon></a>
                                 </div>
 
-                                <div><ion-icon style="font-size: 1.5rem" name="ellipsis-horizontal-outline"></ion-icon></div>
+{{--                                <div><ion-icon style="font-size: 1.5rem" name="ellipsis-horizontal-outline"></ion-icon></div>--}}
                             </li>
                             <hr>
 
@@ -170,9 +200,16 @@
                         <div>Modelo</div>
                         <div>Estado</div>
                         <div class="tecnico">Contacta a tu tecnico</div>
-                        <div>Mas</div>
+{{--                        <div>Mas</div>--}}
                     </li>
                     <hr>
+
+                    @if($cancelados == 0)
+
+                        <p>No tienes servicios cancelados.</p>
+
+                    @endif
+
                     @foreach($servicios as $servicio)
 
                         @if($servicio->estado_servicio=='cancelado' )
@@ -224,7 +261,7 @@
                                     <a href=""><ion-icon name="information-circle-outline"></ion-icon></a>
                                 </div>
 
-                                <div><ion-icon style="font-size: 1.5rem" name="ellipsis-horizontal-outline"></ion-icon></div>
+{{--                                <div><ion-icon style="font-size: 1.5rem" name="ellipsis-horizontal-outline"></ion-icon></div>--}}
                             </li>
                             <hr>
 
@@ -242,7 +279,7 @@
                             <div>{{$equipos->nombre}}</div>
                             <div>{{$equipos->marca}}</div>
                             <div>{{$equipos->modelo}}</div>
-                            <div>{{}}</div>
+                            <div><a href="./app?equipo={{$equipos->id}}"> <ion-icon name="build-outline"></ion-icon> </a></div>
                         </li>
 
                     @endforeach

@@ -133,6 +133,59 @@ if(ancho<700){
 }
 
 
+
+// Obtener la URL actual
+let url = window.location.href;
+let urlObj = new URL(url);
+let ruta = urlObj.pathname;
+
+
+if(ruta == "/app"){
+
+    let urlActual = window.location.search;
+    let params = new URLSearchParams(urlActual);
+    let equipo = params.get("equipo");
+
+    console.log(ruta);
+    console.log(urlActual);
+    console.log("sieeeeeeeeeeeeeeeeeeeeeeeeeee")
+    console.log(equipo)
+
+    if(equipo){
+        const miDiv = document.getElementById('opcion-nuevo');
+        const miDiv1 = document.getElementById('opcion-nuevo1');
+        const miDiv2 = document.getElementById('opcion-nuevo2');
+        const miDiv3= document.getElementById('opcion-nuevo3');
+        const elementos = miDiv.querySelectorAll('input, textarea, select');
+        const elementos1 = miDiv1.querySelectorAll('input, textarea, select');
+        const elementos2 = miDiv2.querySelectorAll('input, textarea, select');
+        const elementos3 = miDiv3.querySelectorAll('input, textarea, select');
+
+        elementos[0].required = false;
+        elementos1[0].required = false;
+        elementos2[0].required = false;
+        elementos3[0].required = false;
+
+        var opc= document.getElementById('opcion_existente')
+        var ambos = document.getElementById("ambos");
+        var ambos1=document.getElementById('ambos1');
+
+        var equipo_id=document.getElementById('equipo_id');
+        equipo_id.value = equipo;
+        document.getElementsByClassName('new')[0].style.display='none'
+
+        document.getElementById('opcion-nuevo').style.display='none'
+
+        console.log("equipo existente")
+
+        opc.style.display = 'block';
+        ambos.style.display = 'block';
+        ambos1.style.display = 'block';
+    }
+
+
+}
+
 function mostraropc(){
     selector= document.getElementById('new').value;
     if(selector!=''){

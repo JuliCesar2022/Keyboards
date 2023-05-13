@@ -1,9 +1,13 @@
 <?php namespace App\Http\Controllers;
 
-	use App\Models\CmsUsers;
+	use App\Models\Cliente;
+    use App\Models\CmsUsers;
+    use App\Models\equipos;
     use App\Models\Servicio;
     use App\Models\solicitud;
+    use App\Models\User;
     use App\Repositories\BotWhatsApp\BotWhatsApp;
+    use Carbon\Carbon;
     use Session;
 	use Request;
 	use DB;
@@ -55,8 +59,6 @@
 			$this->col[] = ["label"=>"Tecnico Id","name"=>"tecnico_id","join"=>"cms_users,name"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
-
-//            BotWhatsApp::senMessage("573043707188","Hola bb manda foto 😈😈😈");
 
             # START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
@@ -353,7 +355,14 @@
 	    */
 	    public function hook_after_add($id) {
 	        //Your code here
+            if( CRUDBooster::myPrivilegeId()  ==  CmsUsers::$ASESOR || CRUDBooster::isSuperadmin()) {
 
+                $service = Servicio::find($id);
+                $tecnico = CmsUsers::find($service->tecnico_id);
+
+                BotWhatsApp::senMessage($tecnico->tel, "Señor/a ".$tecnico->name." le informamos que se le ha asignado un nuevo servicio. Por favor, \nrevise sus servicios en https://keyboards.tranazula.com/admin/servicio");
+
+            }
 	    }
 
             // ...
@@ -374,6 +383,34 @@
 	    public function hook_before_edit(&$postdata,$id) {
 	        //Your code here
 
+            if( CRUDBooster::myPrivilegeId()  ==  CmsUsers::$TECNICO || CRUDBooster::isSuperadmin()) {
+
+                $service = Servicio::find($id);
+                $cliente = User::find($postdata['client_id']);
+                $equipo = equipos::find($postdata['equipo_id']);
+                $telefonoCliente = $cliente->telefono;
+
+                $fecha = new Carbon($postdata['fecha_salida']);
+                $nombre_mes = Carbon::createFromDate(null, $fecha->month)->format('F');
+
+
+                if($service->status != $postdata['status']){
+
+                    if($postdata['status'] == "finalizado"){
+
+
+                        BotWhatsApp::senMessage($telefonoCliente, "Señor/a ".$cliente->name." le informamos que el servivicio del equipo *" . strtoupper($equipo->nombre) . "* esta en estado *" . strtoupper($postdata['status'])."*.");
+                        BotWhatsApp::senMessage($telefonoCliente, "Puede recogerlo el dia ".$fecha->day. " del mes ".$nombre_mes.". Gracias por confiar en nosotros 😀.");
+
+                    }else{
+
+                      BotWhatsApp::senMessage($telefonoCliente, "Señor/a ".$cliente->name." le informamos que el servivicio del equipo *" . strtoupper($equipo->nombre) . "* esta en estado *" . strtoupper($postdata['status'])."*.");
+                    }
+
+                }
+
+            }
+
 	    }
 
 	    /*
@@ -386,7 +423,7 @@
 	    public function hook_after_edit($id) {
 	        //Your code here
 
-	    }
+        }
 
 	    /*
 	    | ----------------------------------------------------------------------

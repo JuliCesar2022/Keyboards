@@ -84,6 +84,8 @@ if($boleano=='false'){
     $solicutud->problem=request()->problem;
     $solicutud->advisor_id= $cantidadUserByAsesor[0]["asesor"];
 
+
+
     $fecha = solicitud::where("client_id",Auth()->id() )->select("created_at")->first()->created_at;
 
 
@@ -107,6 +109,9 @@ if($boleano=='false'){
 
     $solicutud-> save();
 
+    $asesor = CmsUsers::find($cantidadUserByAsesor[0]["asesor"]);
+//    dd($asesor);
+    \App\Repositories\BotWhatsApp\BotWhatsApp::senMessage($asesor->tel,"Señor/a ".$asesor->name." Le informamos que se le ha asignado automáticamente una solicitud. \nRevise sus solicitudes en keyboards.tranazula.com/admin/solicitudes ");
 
 
     return redirect('app')->with('enviado', 'te contactaremos pronto');
