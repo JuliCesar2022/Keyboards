@@ -10,5 +10,5 @@ class equipos extends Model
     use HasFactory;
 
 
-    protected $table= "Equipos";
+    protected $table= "equipos";
 }
