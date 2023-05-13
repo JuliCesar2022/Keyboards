@@ -34,7 +34,7 @@
 			$this->col[] = ["label"=>"pais","name"=>"pais"];
 			$this->col[] = ["label"=>"ciudad","name"=>"ciudad"];
 			$this->col[] = ["label"=>"direccion","name"=>"direccion"];
-			$this->col[] = ["label"=>"busquedas","name"=>"busquedas"];
+			$this->col[] = ["label"=>"busquedas","name"=>"busqueda"];
 			$this->col[] = ["label"=>"Horario Comercial","name"=>"horario_comercial"];
 			$this->col[] = ["label"=>"Telefono","name"=>"telefono"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
@@ -45,7 +45,7 @@
 			$this->form[] = ['label'=>'pais','name'=>'pais','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'ciudad','name'=>'ciudad','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'direccion','name'=>'direccion','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'busquedas','name'=>'busquedas','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'busquedas','name'=>'busqueda','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Horario Comercial','name'=>'horario_comercial','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Telefono','name'=>'telefono','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
