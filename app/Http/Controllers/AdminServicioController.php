@@ -56,7 +56,7 @@
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 
-            BotWhatsApp::senMessage("3043707188","Hola bb manda foto 😈😈😈");
+//            BotWhatsApp::senMessage("573043707188","Hola bb manda foto 😈😈😈");
 
             # START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];

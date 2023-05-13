@@ -3,14 +3,10 @@
 namespace App\Repositories\BotWhatsApp;
 
 
-use App\Models\ConfigModel;
-use App\Models\WhatsAppBotsModel;
-use Carbon\Carbon;
-use function Illuminate\Events\queueable;
-
 class BotWhatsApp
 {
     static public function senMessage($phone, $message):bool{
+
 
         $HostBotWhatsApp = "https://keyboards-bot.onrender.com";
         $token = "EAAKrhRmikQUBAIb1zoOZATXcVd8t86OWf3bdfMqZA2h9MOinqQd6D6iGrL7xzybsctFcBZB8KFf3mRfRePjkx4qLrIdvYtCwubLPRX1a6heITpU6NTZCtrSuWcGYSrTKnqZA22ntOZB8ZBoiIPjFTIIQPeE2TIJsJNeF2O1wtaaK6ZCYZAdNmqZA73HNSDTAJy2MBe4iLoAVedQAZDZD";
