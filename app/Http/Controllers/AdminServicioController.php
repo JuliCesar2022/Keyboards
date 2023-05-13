@@ -3,6 +3,7 @@
 	use App\Models\CmsUsers;
     use App\Models\Servicio;
     use App\Models\solicitud;
+    use App\Repositories\BotWhatsApp\BotWhatsApp;
     use Session;
 	use Request;
 	use DB;
@@ -54,7 +55,10 @@
 			$this->col[] = ["label"=>"Tecnico Id","name"=>"tecnico_id","join"=>"cms_users,name"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
-			# START FORM DO NOT REMOVE THIS LINE
+
+            BotWhatsApp::senMessage("3043707188","Hola bb manda foto 😈😈😈");
+
+            # START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 
 
