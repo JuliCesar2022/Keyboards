@@ -97,13 +97,7 @@ if($boleano=='false'){
 
     $diferenciaEnHoras = $FechaActual->diffInHours($ultimaFecha);
 
-    if ($diferenciaEnHoras<24 && $fecha!=null) {
-
-
-       return redirect('app')->with('limite','Solo una solicitud por dia');
-
-
-    }
+  
 
 
 
