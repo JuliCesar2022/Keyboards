@@ -3,7 +3,7 @@
 
 @section('contener')
 
-
+siiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
 
     <div class="contienetodo">
 
@@ -49,6 +49,7 @@
                         <p>No tienes servicios activos.</p>
 
                     @endif
+
 
                     @foreach($servicios as $servicio)
 
