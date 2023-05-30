@@ -35,7 +35,9 @@
 
                         $estados = $servicios->pluck('estado_servicio');
                         $activos = substr_count($estados,"recibido") + substr_count($estados,"en proceso");
+
                         $finalizados = substr_count($estados,"finalizado");
+
                         $cancelados = substr_count($estados,"cancelado");
 
 
