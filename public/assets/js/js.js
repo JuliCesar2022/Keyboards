@@ -99,6 +99,7 @@ async function sendQuestion(messague){
                 updateChat();
             }
 
+            
         })
         .catch(error => console.log('error', error));
 
