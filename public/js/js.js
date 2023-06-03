@@ -65,9 +65,10 @@ async function sendQuestion(messague){
 
     var raw = JSON.stringify({
         "token": "1224",
-        "bot": "Bot259L4JX0CM",
         "message": messague.message,
-        "purge": false
+        "purge": false,
+        "defaultProntID":"3",
+        "phone":"3026736193"
     });
 
     var requestOptions = {
@@ -78,7 +79,7 @@ async function sendQuestion(messague){
     };
 
    // await fetch("https://bots-alhq.onrender.com/talk-to-my-bot?chatID=2&userName=sergio&message="+messague.message, requestOptions)
-     await fetch("https://poe-client.onrender.com/send", requestOptions)
+     await fetch("https://principalpoebot.onrender.com/send", requestOptions)
         .then(response => response.text())
         .then(result =>{
 
