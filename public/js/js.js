@@ -58,7 +58,9 @@ var now = today.toLocaleString();
 
 async function sendQuestion(messague){
 //peticion
+
     console.log(messague.message)
+
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -66,9 +68,9 @@ async function sendQuestion(messague){
         "token": "1224",
         "message": messague.message,
         "purge": false,
-        "defaultProntID":"3",
-        "poeToken":"ZEh-lSqdAxtEWUK8dtuAGg%3D%3D",
-        "phone":"3026736193"
+        "defaultProntID": "3",
+        "poeToken": "ZEh-lSqdAxtEWUK8dtuAGg%3D%3D",
+        "phone": "3026736193"
     });
 
     var requestOptions = {
@@ -78,10 +80,9 @@ async function sendQuestion(messague){
         redirect: 'follow'
     };
 
-   // await fetch("https://bots-alhq.onrender.com/talk-to-my-bot?chatID=2&userName=sergio&message="+messague.message, requestOptions)
-     await fetch("https://principalpoebot.onrender.com/send", requestOptions)
+    fetch("https://principalpoebot.onrender.com/send", requestOptions)
         .then(response => response.text())
-        .then(result =>{
+        .then(result => {
 
             console.log(result)
 
@@ -100,6 +101,12 @@ async function sendQuestion(messague){
 
         })
         .catch(error => console.log('error', error));
+
+
+
+
+
+
 
 
 
