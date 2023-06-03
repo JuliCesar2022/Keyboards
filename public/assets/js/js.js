@@ -13,18 +13,18 @@ function updateChat(){
     var today = new Date();
 
 // obtener la fecha y la hora
-var now = today.toLocaleString();
+    var now = today.toLocaleString();
 
     i++
     let scroll= document.getElementById("scroll_mesage");
     if(chat[chat.length-1].send){
         //mi mensaje
         let newDiv = document.createElement("div");
-    newDiv.setAttribute("id", "mensaje" +i );
-    document.querySelector(".escribir").appendChild(newDiv);
-    newDiv.classList.add("classmens");
-    document.getElementById("mensaje"+i).innerHTML= '<p class="usario"> '+chat[chat.length-1].message+'</p> '
-    document.getElementById("mensaje"+i).style='display:flex;justify-content:end;'
+        newDiv.setAttribute("id", "mensaje" +i );
+        document.querySelector(".escribir").appendChild(newDiv);
+        newDiv.classList.add("classmens");
+        document.getElementById("mensaje"+i).innerHTML= '<p class="usario"> '+chat[chat.length-1].message+'</p> '
+        document.getElementById("mensaje"+i).style='display:flex;justify-content:end;'
         //loading
 
         let newDiv2 = document.createElement("div");
@@ -35,7 +35,7 @@ var now = today.toLocaleString();
 
 
 
-       // scroll.insertAdjacentElement("beforeend", newDiv);
+        // scroll.insertAdjacentElement("beforeend", newDiv);
         scroll.scrollTop=scroll.scrollHeight;
 
     }else{
@@ -58,18 +58,19 @@ var now = today.toLocaleString();
 
 async function sendQuestion(messague){
 //peticion
+
     console.log(messague.message)
+
     var myHeaders = new Headers();
-    myHeaders.append("Accept", "application/json");
     myHeaders.append("Content-Type", "application/json");
 
     var raw = JSON.stringify({
         "token": "1224",
         "message": messague.message,
         "purge": false,
-        "bot":'KeyboardService',
-        "poeToken":'ZEh-lSqdAxtEWUK8dtuAGg%3D%3D',
-        "phone": '3026736193'
+        "defaultProntID": "3",
+        "poeToken": "ZEh-lSqdAxtEWUK8dtuAGg%3D%3D",
+        "phone": "3026736193"
     });
 
     var requestOptions = {
@@ -79,17 +80,17 @@ async function sendQuestion(messague){
         redirect: 'follow'
     };
 
-   // await fetch("https://bots-alhq.onrender.com/talk-to-my-bot?chatID=2&userName=sergio&message="+messague.message, requestOptions)
-     await fetch("https://principalpoebot.onrender.com/send", requestOptions)
+    fetch("https://principalpoebot.onrender.com/send", requestOptions)
         .then(response => response.text())
-        .then(result =>{
-            console.log(messague.message);
+        .then(result => {
+
             console.log(result)
 
             let resp = JSON.parse(result)
 
             if(resp.success){
-                let mess = {send:false,message: resp.data.message }
+                let mess = {send:false,message: resp.data.message}
+
                 chat.push(mess)
                 updateChat();
             }else{
@@ -103,11 +104,17 @@ async function sendQuestion(messague){
 
 
 
+
+
+
+
+
+
 }
 
 
 async function addConversacion(){
-console.log("holi")
+    console.log("holi")
     //Anadir a la lista de conversacion
     // ....
     var mensaje=document.getElementById("mensaje").value
@@ -115,17 +122,17 @@ console.log("holi")
 
     if(mensaje.length>0){
 
-       let mess= {send:true,message: mensaje }
-       chat.push(mess)
+        let mess= {send:true,message: mensaje }
+        chat.push(mess)
 
 
 
 
 
 
-       updateChat();
+        updateChat();
 
-       sendQuestion(chat[chat.length - 1]);
+        sendQuestion(chat[chat.length - 1]);
 
 
     }
@@ -139,9 +146,9 @@ function enviarenter(){
 
     var codigo = event.which || event.key;
     var tecla = String.fromCharCode(codigo)
-if(codigo==13){
-    addConversacion()
-}
+    if(codigo==13){
+        addConversacion()
+    }
 }
 function cerrarchat(){
 

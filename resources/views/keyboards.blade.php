@@ -772,13 +772,13 @@
 <script src="assets/js/wow.js"></script>
 <script src="assets/js/jquery.nav.js"></script>
 <script src="assets/js/scrolling-nav.js"></script>
-<script src="assets/js/js.js"></script>
 <script src="assets/js/jquery.easing.min.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/form-validator.min.js"></script>
 <script src="assets/js/contact-form-script.min.js"></script>
 <script src="/js/application.js"></script>
 
+<script src="assets/js/js.js"></script>
 
 </body>
 </html>
