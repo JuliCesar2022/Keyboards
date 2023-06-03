@@ -60,7 +60,6 @@ async function sendQuestion(messague){
 //peticion
     console.log(messague.message)
     var myHeaders = new Headers();
-    myHeaders.append("Accept", "application/json");
     myHeaders.append("Content-Type", "application/json");
 
     var raw = JSON.stringify({
@@ -68,6 +67,7 @@ async function sendQuestion(messague){
         "message": messague.message,
         "purge": false,
         "defaultProntID":"3",
+        "poeToken":"ZEh-lSqdAxtEWUK8dtuAGg%3D%3D",
         "phone":"3026736193"
     });
 
